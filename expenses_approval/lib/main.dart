@@ -1,4 +1,8 @@
+import 'package:expensesapproval/screens/approvedplan.dart';
+import 'package:expensesapproval/screens/createlocalplan.dart';
+import 'package:expensesapproval/screens/homepage.dart';
 import 'package:expensesapproval/screens/login.dart';
+import 'package:expensesapproval/screens/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -22,7 +26,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Login(),
+      home: homePage(),
     );
   }
 }

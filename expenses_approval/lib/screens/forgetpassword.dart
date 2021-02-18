@@ -17,13 +17,14 @@ class ForgetPassword extends StatelessWidget{
       RoundedRectangleBorder(borderRadius: new BorderRadius.circular(15)),
       actions: <Widget>[
         Container(
+          width: 250,
           padding: EdgeInsets.only(left: 20.0,right: 20.0),
           child: TextField(
             decoration: new InputDecoration(
 
                 border: new OutlineInputBorder(
                   borderSide: BorderSide(
-                    width: 0,
+//                    width: 0,
                     style: BorderStyle.none,
                   ),
                   borderRadius: const BorderRadius.all(
@@ -39,11 +40,8 @@ class ForgetPassword extends StatelessWidget{
         Container(
           child: CustomButtom('Reset Password',253.0,45.0,null,theme,Colors.white)
         ),
-        Positioned(
-          bottom: 10.0,
-          left: 200.0,
-          child: FloatingActionButton(
-            child: Image.asset("assets/red_cross.png"),
+         FloatingActionButton(
+            child: Icon(Icons.close),
             onPressed: (){
               Navigator.pop(context);
             },
@@ -52,7 +50,7 @@ class ForgetPassword extends StatelessWidget{
             mini: true,
             elevation: 5.0,
           ),
-        ),
+
       ],
     );
 

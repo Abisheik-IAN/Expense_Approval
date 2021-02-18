@@ -21,7 +21,8 @@ class login extends State<Login>{
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
-      body: Container(
+      body: SafeArea(
+        child:Container(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
@@ -86,7 +87,8 @@ class login extends State<Login>{
                         style: TextStyle(fontFamily: 'worksans', color: subtxtlite, fontSize: 16,fontWeight: FontWeight.w600,)),
                     ),
                     onTap:(){
-                      Navigator.push(context,MaterialPageRoute(builder: (context)=> ForgetPassword()));
+//                      Navigator.push(context,MaterialPageRoute(builder: (context)=> ForgetPassword()));
+                        showAlertDialog(context);
                     },
 
                   ),
@@ -113,6 +115,57 @@ class login extends State<Login>{
           ],
         ),
       ),
+      )
+    );
+  }
+  showAlertDialog(BuildContext context) {
+
+    // set up the button
+    Widget okButton = Container(padding: EdgeInsets.only(top:20.0,left: 20.0,right: 20.0),child:CustomButtom('Reset Password',253.0,45.0,null,theme,Colors.white));
+    Widget txtbox=Container(
+      width: 315,
+      padding: EdgeInsets.only(left: 20.0,right: 20.0),
+      child: TextField(
+        decoration: new InputDecoration(
+
+            border: new OutlineInputBorder(
+              borderSide: BorderSide(
+//                    width: 0,
+                style: BorderStyle.none,
+              ),
+              borderRadius: const BorderRadius.all(
+                const Radius.circular(10.0),
+              ),
+            ),
+            filled: true,
+            hintStyle: new TextStyle(color: Colors.grey[800]),
+            hintText: "abc@optisolbusiness.com",
+            fillColor: txtfield),
+      ),
+    );
+
+    // set up the AlertDialog
+    AlertDialog alert = AlertDialog(
+      title: Text("Forgot Password?",
+          style: TextStyle(fontFamily: 'worksans', color: txtbold, fontSize: 16,fontWeight: FontWeight.w600)),
+      content: Text("Please enter your office email to update your password",
+      style: TextStyle(fontFamily: 'worksans', color: subtxtlite, fontSize: 16,fontWeight: FontWeight.w600)),
+      backgroundColor: Colors.white,
+      shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(15)),
+      actions: [
+        txtbox,
+        okButton,
+      ],
+
+    );
+
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+
+      },
     );
   }
 
