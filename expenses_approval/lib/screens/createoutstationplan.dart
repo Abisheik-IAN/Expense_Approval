@@ -3,9 +3,9 @@ import 'package:expensesapproval/components/textandtextfield.dart';
 import 'package:expensesapproval/res/colors.dart';
 import 'package:flutter/material.dart';
 
-class createLocalPlan extends StatefulWidget{
+class createOutstaionPlan extends StatefulWidget{
   @override
-  createLocalPlanState  createState() => createLocalPlanState();
+  createOutstaionPlanState  createState() => createOutstaionPlanState();
 
 }
 class Item {
@@ -14,7 +14,7 @@ class Item {
   final Icon icon;
 }
 
-class createLocalPlanState extends State<createLocalPlan> {
+class createOutstaionPlanState extends State<createOutstaionPlan> {
   TextEditingController dateCtl = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -28,9 +28,9 @@ class createLocalPlanState extends State<createLocalPlan> {
 //    List<String> _locations = ['A', 'B', 'C', 'D'];
     String _selectedLocation = 'Please choose a location';
     List users = [const Item('select the mode of transport',null),
-                        const  Item('Two wheeler', Icon(Icons.bike_scooter_outlined)),
-                        const  Item('Car rental', Icon(Icons.car_rental)),
-                        const  Item('Train', Icon(Icons.train))];
+      const  Item('Two wheeler', Icon(Icons.bike_scooter_outlined)),
+      const  Item('Car rental', Icon(Icons.car_rental)),
+      const  Item('Train', Icon(Icons.train))];
     return Scaffold(
         appBar: AppBar(
           backgroundColor: white,

@@ -1,11 +1,11 @@
-
-
-
 import 'package:expensesapproval/components/Button.dart';
 import 'package:expensesapproval/res/colors.dart';
 import 'package:expensesapproval/res/images.dart';
 import 'package:expensesapproval/screens/forgetpassword.dart';
+import 'package:expensesapproval/utilis/dynamicheigthwidth.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -16,8 +16,12 @@ class Login extends StatefulWidget {
 class login extends State<Login>{
   final _username=TextEditingController();
   final _password=TextEditingController();
+
   @override
   Widget build(BuildContext context) {
+    double fixsize= getDevicewidth(context, 0.0781);
+    print (MediaQuery.of(context).size.width);
+    print (MediaQuery.of(context).size.height);
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
@@ -30,16 +34,16 @@ class login extends State<Login>{
                 children: <Widget>[
                   Center(
                   child:Container(
-                    padding: EdgeInsets.only(top: 100.0),
-                    child: Image(image: AssetImage('assets/optisollogo.png'),width: 150.0,),
+                    padding: EdgeInsets.only(top: getDeviceheight(context, 0.16)),
+                    child: Image(image: AssetImage('assets/optisollogo.png'),width: getDevicewidth(context, 0.3906),),
                   ),),
                   Container(
-                    padding: EdgeInsets.only(top: 185.0,left: 30.0),
+                    padding: EdgeInsets.only(top: getDeviceheight(context, 0.3125),left: fixsize),
                     child: Text("Email",
                         style: TextStyle(fontFamily: 'worksans', color: txtbold, fontSize: 16,fontWeight: FontWeight.w600)),
                   ),
                   Container(
-                    padding: EdgeInsets.only(top: 215.0,left: 30.0,right: 30.0),
+                    padding: EdgeInsets.only(top: getDeviceheight(context, 0.3632),left: fixsize,right: fixsize),
                     child: TextField(
                       decoration: new InputDecoration(
 
@@ -58,12 +62,12 @@ class login extends State<Login>{
                           fillColor: txtfield),
                     ),
                   ),Container(
-                    padding: EdgeInsets.only(top: 285.0,left: 30.0),
+                    padding: EdgeInsets.only(top: getDeviceheight(context, 0.4814),left: fixsize),
                     child: Text("Password",
                         style: TextStyle(fontFamily: 'worksans', color: txtbold, fontSize: 16,fontWeight: FontWeight.w600)),
                   ),
                   Container(
-                    padding: EdgeInsets.only(top: 315.0,left: 30.0,right: 30.0),
+                    padding: EdgeInsets.only(top: getDeviceheight(context, 0.5321),left: fixsize,right: fixsize),
                     child: TextField(
                       decoration: new InputDecoration(
                         suffixIcon: FlatButton.icon(onPressed:(){ print('pressed');}, icon: Icon(Icons.remove_red_eye), label: Text('')),
@@ -82,7 +86,7 @@ class login extends State<Login>{
                           fillColor: txtfield),
                     ),
                   ),InkWell(child: Container(
-                    padding: EdgeInsets.only(top: 385.0,left: 30.0,right: 30.0),
+                    padding: EdgeInsets.only(top: getDeviceheight(context, 0.6503),left: fixsize,right: fixsize),
                     child: Text("                                  Forget password?",
                         style: TextStyle(fontFamily: 'worksans', color: subtxtlite, fontSize: 16,fontWeight: FontWeight.w600,)),
                     ),
@@ -93,11 +97,11 @@ class login extends State<Login>{
 
                   ),
                   Container(
-                    padding: EdgeInsets.only(top: 425.0,left: 30.0,right: 30.0),
+                    padding: EdgeInsets.only(top: getDeviceheight(context, 0.7179),left: fixsize,right: fixsize),
                     child: CustomButtom('Sign in',330.0,55.0,null,theme,Colors.white),
                   ),
                   Container(
-                    padding: EdgeInsets.only(top: 495.0,left: 30.0,right: 30.0),
+                    padding: EdgeInsets.only(top: getDeviceheight(context, 0.8361),left: fixsize,right: fixsize),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[

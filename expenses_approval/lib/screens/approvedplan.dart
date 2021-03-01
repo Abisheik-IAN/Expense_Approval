@@ -50,7 +50,7 @@ class approvedPlanState extends State<approvedPlan> {
                                     ],
                                   ),
                                   SizedBox(height: 5.0,),
-                                  CustomButtom("Start trip >>",235.0 , 40.0, null, theme, white),
+                                  CustomButtom("Start trip  >>",235.0 , 40.0, null, theme, white),
                                   SizedBox(height: 15.0,)
                                 ],
                               ),
